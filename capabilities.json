@@ -1,0 +1,217 @@
+{
+    "dataRoles": [
+        { "displayName": "Origem", "name": "source", "kind": "Grouping" },
+        { "displayName": "Destino", "name": "target", "kind": "Grouping" },
+        { "displayName": "Valor", "name": "value", "kind": "Measure" },
+        { "displayName": "Nível", "name": "level", "kind": "Measure" },
+        { "displayName": "Descrição", "name": "descricao", "kind": "Grouping" }
+    ],
+    "objects": {
+        "sankeyConfig": {
+            "displayName": "Configurações do Sankey",
+            "properties": {
+                "nodeWidth": { "displayName": "Largura do Nó", "type": { "numeric": true } },
+                "nodePadding": { "displayName": "Espaçamento Vertical", "type": { "numeric": true } },
+                "columnSpacing": { "displayName": "Espaçamento Entre Colunas", "type": { "numeric": true } },
+                "allowReferenceFlowMismatch": { "displayName": "Permitir valores diferentes", "type": { "bool": true } },
+                "referenceFlowSource": { "displayName": "Nó de origem da referência", "type": { "enumeration": [] } },
+                "referenceFlowTarget": { "displayName": "Nó de destino da referência", "type": { "enumeration": [] } },
+                "columnAlign": {
+                    "displayName": "Alinhamento da Coluna",
+                    "type": { "enumeration": [
+                        { "value": "bottom", "displayName": "Inferior" },
+                        { "value": "center", "displayName": "Centro" },
+                        { "value": "top", "displayName": "Superior" }
+                    ] }
+                },
+                "valueDisplayUnits": {
+                    "displayName": "Unidades do Rótulo",
+                    "type": { "enumeration": [
+                        { "value": "compact", "displayName": "Compacto (K/M/B)" },
+                        { "value": "format", "displayName": "Formato da medida" },
+                        { "value": "none", "displayName": "Nenhum" }
+                    ] }
+                },
+                "nodeCornerRadius": {
+                    "displayName": "Arredondamento dos Nós (px)",
+                    "type": { "numeric": true }
+                },
+                "minNodeHeight": {
+                    "displayName": "Altura Mínima do Nó (px)",
+                    "type": { "numeric": true }
+                }
+            }
+        },
+        "linkConfig": {
+            "displayName": "Fluxos / Conexões",
+            "properties": {
+                "linkOpacity": {
+                    "displayName": "Opacidade (%)",
+                    "type": { "numeric": true }
+                },
+                "linkColorMode": {
+                    "displayName": "Modo de Cor",
+                    "type": {
+                        "enumeration": [
+                            { "value": "target", "displayName": "Cor do Destino" },
+                            { "value": "source", "displayName": "Cor da Origem" },
+                            { "value": "gradient", "displayName": "Gradiente (Origem ➔ Destino)" },
+                            { "value": "neutral", "displayName": "Cor Neutra Fixa" }
+                        ]
+                    }
+                },
+                "linkNeutralColor": {
+                    "displayName": "Cor Neutra Fixa",
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "linkCurvature": {
+                    "displayName": "Curvatura do Fluxo",
+                    "type": { "numeric": true }
+                }
+            }
+        },
+        "nodeLabels": {
+            "displayName": "Rótulos de Dados",
+            "properties": {
+                "show": {
+                    "displayName": "Exibir Rótulos",
+                    "type": { "bool": true }
+                },
+                "fontFamily": {
+                    "displayName": "Fonte",
+                    "type": { "formatting": { "fontFamily": true } }
+                },
+                "fontSize": {
+                    "displayName": "Tamanho da Fonte (pt)",
+                    "type": { "formatting": { "fontSize": true } }
+                },
+                "fontColor": {
+                    "displayName": "Cor da Fonte",
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "bold": {
+                    "displayName": "Negrito",
+                    "type": { "bool": true }
+                },
+                "labelContentMode": {
+                    "displayName": "Conteúdo do Rótulo",
+                    "type": {
+                        "enumeration": [
+                            { "value": "nameAndValue", "displayName": "Nome e Valor" },
+                            { "value": "nameOnly", "displayName": "Apenas Nome" },
+                            { "value": "valueOnly", "displayName": "Apenas Valor" },
+                            { "value": "nameAboveValue", "displayName": "Nome acima, Valor abaixo" }
+                        ]
+                    }
+                },
+                "labelPosition": {
+                    "displayName": "Posição do Rótulo",
+                    "type": {
+                        "enumeration": [
+                            { "value": "left", "displayName": "À Esquerda" },
+                            { "value": "right", "displayName": "À Direita" },
+                            { "value": "center", "displayName": "Centralizado no Nó" }
+                        ]
+                    }
+                },
+                "decimalPlaces": {
+                    "displayName": "Casas Decimais",
+                    "type": { "integer": true }
+                },
+                "showSubtext": {
+                    "displayName": "Exibir % de Referência",
+                    "type": { "bool": true }
+                },
+                "subtextLabel": {
+                    "displayName": "Texto do Subtexto",
+                    "type": { "text": true }
+                },
+                "subtextFontSize": {
+                    "displayName": "Tamanho do Subtexto (pt)",
+                    "type": { "formatting": { "fontSize": true } }
+                },
+                "subtextFontColor": {
+                    "displayName": "Cor do Subtexto",
+                    "type": { "fill": { "solid": { "color": true } } }
+                }
+            }
+        },
+        "nodeColors": {
+            "displayName": "Cores dos Nós",
+            "properties": {
+                "fill": { "displayName": "Cor", "type": { "fill": { "solid": { "color": true } } } }
+            }
+        },
+        "nodeOrderConfig": {
+            "displayName": "Ordem dos Nós",
+            "properties": {
+                "node": {
+                    "displayName": "Nó",
+                    "type": {
+                        "enumeration": []
+                    }
+                },
+                "order": {
+                    "displayName": "Posição",
+                    "type": {
+                        "numeric": true
+                    }
+                }
+            }
+        },
+        "interactionConfig": {
+            "displayName": "Navegação e Interação",
+            "properties": {
+                "showZoomControls": {
+                    "displayName": "Exibir Controles de Zoom",
+                    "type": { "bool": true }
+                },
+                "enableWheelZoom": {
+                    "displayName": "Zoom com Rolagem do Mouse",
+                    "type": { "bool": true }
+                },
+                "dimmedOpacity": {
+                    "displayName": "Opacidade dos Não Destacados (%)",
+                    "type": { "numeric": true }
+                }
+            }
+        },
+        "canvasConfig": {
+            "displayName": "Tela e Margens",
+            "properties": {
+                "transparentBackground": {
+                    "displayName": "Fundo Transparente",
+                    "type": { "bool": true }
+                },
+                "backgroundColor": {
+                    "displayName": "Cor do Fundo",
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "paddingLeft": {
+                    "displayName": "Margem Esquerda (px)",
+                    "type": { "numeric": true }
+                },
+                "paddingRight": {
+                    "displayName": "Margem Direita (px)",
+                    "type": { "numeric": true }
+                }
+            }
+        }
+    },
+    "dataViewMappings": [
+        {
+            "conditions": [
+                {
+                    "source": { "min": 1, "max": 1 },
+                    "target": { "min": 1, "max": 1 },
+                    "value": { "min": 1, "max": 1 }
+                }
+            ],
+            "categorical": {
+                "categories": { "select": [ { "for": { "in": "source" } }, { "for": { "in": "target" } }, { "for": { "in": "descricao" } } ] },
+                "values": { "select": [ { "bind": { "to": "value" } }, { "bind": { "to": "level" } } ] }
+            }
+        }
+    ],
+    "privileges": []
+}
